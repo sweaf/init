@@ -59,21 +59,19 @@ module.exports = {
 
 	// Versioned references
 	replace: {
-		files: [
-			'*.html'
-		],
-		dest: [
-			'dist/'
-		],
+		files: 'temp/*.html',
+		dest: 'dist/',
+
 		deploy: {
 			maincss: '<%= pkg.version %>/main.min.css',
 			modernizr: '<%= pkg.version %>/modernizr.custom.min.js',
-			mainjs: '<script src="<%= pkg.version %>/main.min.js"></script>'
+			mainjs: '<script src="dist/<%= pkg.version %>/main.min.js"></script>'
 		},
+
 		dev: {
 			maincss: 'css/main.css',
 			modernizr: '../components/modernizr/modernizr.js',
 			mainjs: '<script data-main="js/config" src="../components/requirejs/require.js"></script>'
 		}
-	},
+	}
 };

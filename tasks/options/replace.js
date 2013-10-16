@@ -25,7 +25,8 @@ module.exports = {
 		},
 		files: [{
 			src: config.replace.files,
-			dest: config.destDir
+			dest: config.destDir,
+			flatten: true
 		}]
 	},
 	dev: {
